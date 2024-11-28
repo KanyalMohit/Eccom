@@ -71,11 +71,11 @@ dependencies {
     implementation (libs.firebase.firestore)
 
     //hilt
-    implementation("com.google.dagger:hilt-android:2.52")
+    implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    implementation("androidx.navigation:navigation-compose:2.8.4")
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
 }
 
 // Allow references to generated code

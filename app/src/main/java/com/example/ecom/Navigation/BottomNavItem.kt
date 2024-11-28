@@ -12,7 +12,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 
 sealed class BottomNavItem(var title : String, var icon : ImageVector, var route : String) {
     object Home :  BottomNavItem("Home", Icons.Outlined.Home, "home")
-    object Search :  BottomNavItem("Search", Icons.Outlined.Search, "search")
+    object Explore :  BottomNavItem("Explore", Icons.Outlined.Search, "Explore")
     object Wishlist : BottomNavItem("Wishlist", Icons.Outlined.FavoriteBorder, "wishlist")
     object Profile :  BottomNavItem("Profile", Icons.Outlined.Person, "profile")
 }

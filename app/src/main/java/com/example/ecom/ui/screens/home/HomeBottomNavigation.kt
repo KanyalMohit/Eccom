@@ -35,7 +35,7 @@ fun BottomNavigationBar(
 ) {
     val items = listOf(
         BottomNavItem.Home,
-        BottomNavItem.Search,
+        BottomNavItem.Explore,
         BottomNavItem.Wishlist,
         BottomNavItem.Profile
     )
@@ -50,7 +50,7 @@ fun BottomNavigationBar(
     ) {
         items.forEach { item ->
             NavigationBarItem(
-                modifier = Modifier.offset(y=0.dp),
+                modifier = Modifier.offset(y=3.dp),
                 selected = currentRoute(navController) == item.route,
                 onClick = {
                     /*navController.navigate(item.route) {

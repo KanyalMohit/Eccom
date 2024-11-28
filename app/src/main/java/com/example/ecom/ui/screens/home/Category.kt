@@ -3,6 +3,7 @@ package com.example.ecom.ui.screens.home
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -48,7 +49,8 @@ val categories = listOf(
 fun CategoryGrid(navController: NavHostController) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(4),
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier.padding(16.dp).height(157.dp),
+        userScrollEnabled = false
     ) {
         items(categories) { category ->
             OutlinedCard(

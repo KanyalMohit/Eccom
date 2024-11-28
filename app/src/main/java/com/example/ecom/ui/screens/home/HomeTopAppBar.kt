@@ -10,6 +10,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,8 +23,9 @@ import com.example.ecom.R
 @OptIn(ExperimentalMaterial3Api::class)
 fun HomeTopAppBar(
     modifier: Modifier = Modifier,
-    onCartClick : ()-> Unit
+    onCartClick: () -> Unit,
 ) {
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     TopAppBar(
         modifier = modifier,
         title = {
