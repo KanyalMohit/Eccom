@@ -4,38 +4,52 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.ecom.Navigation.NavigationHost
 import com.example.ecom.model.service.AccountServiceImpl
+import com.example.ecom.ui.screens.SharedViewModel
 import com.example.ecom.ui.theme.EcomTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+   // private val firestore = FirebaseFirestore.getInstance()
+   private val sharedViewModel: SharedViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             EcomTheme {
-                EcomApp()
+                EcomApp(sharedViewModel = sharedViewModel)
             }
         }
+        //uploadProduct(products = products)
     }
+    /*private fun uploadProduct(products : List<Product>){
+        var i = 0
+        val collection = firestore.collection("Products")
+        products.forEach{ product ->
+            collection.document(i.toString())
+                .set(product)
+                .addOnSuccessListener {
+                    Log.d("Firebase", "Product uploaded successfully with ID $i")
+                }
+                .addOnFailureListener { e ->
+                    Log.e("Firebase", "Failed to upload product", e)
+                }
+            i++
+        }
+    }*/
 }
 
 
 @Composable
-fun EcomApp() {
+fun EcomApp(sharedViewModel: SharedViewModel) {
     val navController = rememberNavController()
     val accountService = remember { AccountServiceImpl() }
-    NavigationHost(navController,accountService = accountService)
+    NavigationHost(navController,accountService = accountService, sharedViewModel = sharedViewModel)
 }
 

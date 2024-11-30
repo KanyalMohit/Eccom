@@ -8,4 +8,5 @@ sealed class Screen(
     data object  Home : Screen("home")
     data object  Cart : Screen("cart")
     data object  Profile : Screen("profile")
+    data object  DetailPage : Screen("detailPage")
 }

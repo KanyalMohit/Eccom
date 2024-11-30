@@ -3,7 +3,6 @@ package com.example.ecom.ui.screens.productDetail
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
@@ -19,23 +18,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ProductBrandAndRating() {
+fun ProductBrandAndRating(brand: String, rating: Double, ratingCount: Int , onFavouriteClick : () -> Unit) {
     Row(
         modifier = Modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(3.dp)
     ) {
-        Text("Apple", color = Color.DarkGray, fontSize = 20.sp)
+        Text(brand, color = Color.DarkGray, fontSize = 20.sp)
         Icon(
             modifier = Modifier.size(20.dp),
             imageVector = Icons.Default.Star,
             contentDescription = "Stars",
             tint = Color(0xFFFFA000)
         )
-        Text("4.9 (300)", fontSize = 20.sp)
+        Text("${rating} (${ratingCount})", fontSize = 20.sp)
         Spacer(modifier = Modifier.weight(1f))
         IconButton(
-            onClick = {}
+            onClick = {
+
+            }
         ) {
             Icon(
                 modifier = Modifier.size(30.dp),

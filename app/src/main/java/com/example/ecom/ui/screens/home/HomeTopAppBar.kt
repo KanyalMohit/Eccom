@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -46,10 +48,10 @@ fun HomeTopAppBar(
         actions = {
             IconButton(onClick = onCartClick) {
                 Icon(
-                    modifier = Modifier.size(35.dp),
-                    painter = painterResource(R.drawable.shopping_cart),
+                    modifier = Modifier.size(28.dp),
+                    imageVector = Icons.Outlined.ShoppingCart,
                     contentDescription = "Cart",
-                    tint = Color.Unspecified
+                    tint = Color.Black
                 )
             }
         },

@@ -76,6 +76,9 @@ dependencies {
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
+
+    //coil
+    implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
 }
 
 // Allow references to generated code

@@ -20,18 +20,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ProductPrice() {
+fun ProductPrice(price: Int, orignalPrice: Int) {
     Column {
         Row(
             horizontalArrangement = Arrangement.spacedBy(15.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("$1000", color = Color(0xFF000000), fontSize = 24.sp, fontWeight = FontWeight.SemiBold)
+            Text("₹${price}", color = Color(0xFF000000), fontSize = 24.sp, fontWeight = FontWeight.SemiBold)
             SuggestionChip(
                 modifier = Modifier
                     .width(85.dp)
                     .height(20.dp),
-                onClick = {},
+                onClick = {
+
+                },
                 label = { Text("35% off", color = Color.Red, fontWeight = FontWeight.SemiBold) },
                 shape = RoundedCornerShape(10.dp),
                 colors = SuggestionChipDefaults.suggestionChipColors(
@@ -42,7 +44,7 @@ fun ProductPrice() {
             )
         }
         Text(
-            "$1599",
+            "₹${orignalPrice}",
             textDecoration = TextDecoration.LineThrough,
             color = Color.Gray,
             fontSize = 18.sp
