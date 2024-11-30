@@ -34,12 +34,12 @@ data class Category(
 )
 
 val categories = listOf(
-    Category("Winter",R.drawable.coat,"coat"),
-    Category("Summer",R.drawable.tshirt,"shirt"),
-    Category("Pants",R.drawable.pants,"pants"),
+    Category("Winter",R.drawable.coat,"Winter"),
+    Category("Summer",R.drawable.tshirt,"Summer"),
+    Category("Pants",R.drawable.pants,"pant"),
     Category("Shoes",R.drawable.shoes,"shoes"),
-    Category("Accessories",R.drawable.accesories,"accessories"),
-    Category("Furniture",R.drawable.furniture,"furniture"),
+    Category("Watch",R.drawable.accesories,"watch"),
+    Category("Furniture",R.drawable.furniture,"Furniture"),
     Category("Electronics",R.drawable.electronics,"electronics"),
     Category("Games",R.drawable.game,"games")
 )
@@ -55,7 +55,7 @@ fun CategoryGrid(navController: NavHostController) {
         items(categories) { category ->
             OutlinedCard(
                 onClick = {
-                    //navController.navigate(category.route)
+                    navController.navigate("category"+"/${category.route}")
                 },
                 shape = RoundedCornerShape(15.dp),
                 modifier = Modifier.padding(4.dp),

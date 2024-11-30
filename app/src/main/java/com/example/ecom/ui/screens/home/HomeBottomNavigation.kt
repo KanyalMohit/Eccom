@@ -35,9 +35,9 @@ fun BottomNavigationBar(
 ) {
     val items = listOf(
         BottomNavItem.Home,
-        BottomNavItem.Explore,
         BottomNavItem.Wishlist,
-        BottomNavItem.Profile
+        BottomNavItem.Cart,
+        BottomNavItem.Account
     )
     NavigationBar(
         modifier = Modifier
@@ -53,20 +53,12 @@ fun BottomNavigationBar(
                 modifier = Modifier.offset(y=3.dp),
                 selected = currentRoute(navController) == item.route,
                 onClick = {
-                    /*navController.navigate(item.route) {
-                        // Pop up to the root destination of the graph to
-                        // avoid building up a large stack of destinations
-                        // on the back stack as users select items
-                        navController.graph.startDestinationRoute?.let { route ->
-                            popUpTo(route) {
-                                saveState = true
-                            }
-                        }
-                        // Avoid multiple copies of the same destination when
-                        // reselecting the same item
+                    navController.navigate(item.route){
+                        popUpToId
                         launchSingleTop = true
-                        // Restore state when reselecting a previously selected item
-                        restoreState = true*/
+                        restoreState = true
+                    }
+
                 },
                 icon = {
                     Icon(
