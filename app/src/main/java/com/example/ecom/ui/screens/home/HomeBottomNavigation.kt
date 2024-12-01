@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.ecom.Navigation.BottomNavItem
+import com.example.ecom.Navigation.Screen
 import com.example.ecom.Navigation.currentRoute
 
 @Composable
@@ -35,6 +36,7 @@ fun BottomNavigationBar(
 ) {
     val items = listOf(
         BottomNavItem.Home,
+        BottomNavItem.Explore,
         BottomNavItem.Wishlist,
         BottomNavItem.Cart,
         BottomNavItem.Account
@@ -54,7 +56,7 @@ fun BottomNavigationBar(
                 selected = currentRoute(navController) == item.route,
                 onClick = {
                     navController.navigate(item.route){
-                        popUpToId
+                        popUpTo(Screen.Home.route)
                         launchSingleTop = true
                         restoreState = true
                     }

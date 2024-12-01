@@ -16,6 +16,7 @@ import com.example.ecom.ui.screens.SharedViewModel
 import com.example.ecom.ui.screens.account.AccountScreen
 import com.example.ecom.ui.screens.cart.CartScreen
 import com.example.ecom.ui.screens.category.CategoryScreen
+import com.example.ecom.ui.screens.explore.ExplorePage
 import com.example.ecom.ui.screens.productDetail.DetailPage
 import com.example.ecom.ui.screens.wishlist.WishListScreen
 
@@ -82,6 +83,9 @@ fun NavigationHost(
         }
         composable(BottomNavItem.Account.route) {
             AccountScreen(navController=navController)
+        }
+        composable(BottomNavItem.Explore.route){
+            ExplorePage(navController = navController, sharedViewModel = sharedViewModel)
         }
     }
 }

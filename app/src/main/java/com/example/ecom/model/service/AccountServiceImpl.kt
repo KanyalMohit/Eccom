@@ -1,5 +1,6 @@
 package com.example.ecom.model.service
 
+import com.example.ecom.model.product.FireStoreRepository
 import com.example.ecom.model.User
 import com.google.firebase.Firebase
 import com.google.firebase.auth.EmailAuthProvider
@@ -14,9 +15,13 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
+
+
 class AccountServiceImpl
-    @Inject
-    constructor() : AccountService
+@Inject
+constructor(
+    private val firebaseRepository : FireStoreRepository
+) : AccountService
 {
     override val currentUser: Flow<User?>
         get() =

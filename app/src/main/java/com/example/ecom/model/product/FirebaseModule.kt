@@ -1,5 +1,6 @@
 package com.example.ecom.model.product
 
+import com.example.ecom.model.product.FireStoreRepository
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
@@ -15,5 +16,11 @@ object FirebaseModule {
     @Singleton
     fun provideFirebaseFirestore() : FirebaseFirestore {
         return FirebaseFirestore.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFireStoreRepository() : FireStoreRepository{
+        return FireStoreRepository()
     }
 }

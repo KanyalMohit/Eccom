@@ -16,6 +16,7 @@ sealed class BottomNavItem(var title : String, var icon : ImageVector, var route
     object Wishlist : BottomNavItem("Wishlist", Icons.Outlined.FavoriteBorder, "wishlist")
     object Cart :  BottomNavItem("Cart", Icons.Outlined.ShoppingCart, "cart")
     object Account :  BottomNavItem("Account", Icons.Outlined.Person, "account")
+    object Explore : BottomNavItem("Explore", Icons.Outlined.Search,"explore")
 }
 
 @Composable

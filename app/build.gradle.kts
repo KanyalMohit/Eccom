@@ -77,8 +77,11 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
 
-    //coil
+    //glide
     implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
+
+    //material3 icon
+    implementation("androidx.compose.material:material-icons-extended-android:1.7.5")
 }
 
 // Allow references to generated code
