@@ -43,6 +43,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.ecom.Navigation.Screen
 import com.example.ecom.ui.screens.home.BottomNavigationBar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -82,7 +83,9 @@ fun AccountScreen(modifier: Modifier = Modifier, navController: NavHostControlle
             // First Section
             item { AccountItem("My Orders", icon = Icons.Outlined.Inventory, onClick = {}) }
             item { HorizontalDivider(thickness = 4.dp, color = Color.Gray) }
-            item { AccountItem("My Details", Icons.Outlined.Person2, onClick = {}) }
+            item { AccountItem("My Details", Icons.Outlined.Person2, onClick = {
+                navController.navigate(Screen.Profile.route)
+            }) }
             item { AccountItem("Address Book", Icons.Outlined.MapsHomeWork, onClick = {})  }
             item { AccountItem("Payment Methods", Icons.Outlined.CreditCard, onClick = {})  }
             item { AccountItem("Notifications", Icons.Outlined.Notifications, onClick = {}) }
@@ -123,7 +126,7 @@ fun AccountItem(
         modifier = Modifier
             .fillMaxWidth()
             .clickable {
-
+                onClick()
             }
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically

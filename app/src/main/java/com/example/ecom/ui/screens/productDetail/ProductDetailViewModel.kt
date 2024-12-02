@@ -8,7 +8,9 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductDetailViewModel
     @Inject
-    constructor()
+    constructor(
+
+    )
     : AppViewModel(){
 
     fun getProductById(productId: Int, products: List<Product>): Product? {

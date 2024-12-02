@@ -41,6 +41,7 @@ fun HomeScreen(
             HomeTopAppBar(
                 modifier = Modifier,
                 onCartClick = {
+                    navController.navigate(Screen.Cart.route)
                 }
             )
         },

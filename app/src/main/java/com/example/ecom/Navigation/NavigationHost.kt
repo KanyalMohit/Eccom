@@ -14,6 +14,7 @@ import com.example.ecom.ui.screens.authentication.signUp.SignUpScreen
 import com.example.ecom.ui.screens.home.HomeScreen
 import com.example.ecom.ui.screens.SharedViewModel
 import com.example.ecom.ui.screens.account.AccountScreen
+import com.example.ecom.ui.screens.account.profile.ProfileScreen
 import com.example.ecom.ui.screens.cart.CartScreen
 import com.example.ecom.ui.screens.category.CategoryScreen
 import com.example.ecom.ui.screens.explore.ExplorePage
@@ -87,5 +88,14 @@ fun NavigationHost(
         composable(BottomNavItem.Explore.route){
             ExplorePage(navController = navController, sharedViewModel = sharedViewModel)
         }
+
+        composable(Screen.Profile.route) {
+
+            ProfileScreen(
+                sharedViewModel = sharedViewModel,
+                navController = navController
+            )
+        }
+
     }
 }

@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.compose.rememberNavController
 import com.example.ecom.Navigation.NavigationHost
+import com.example.ecom.model.product.FireStoreRepository
 import com.example.ecom.model.service.AccountServiceImpl
 import com.example.ecom.ui.screens.SharedViewModel
 import com.example.ecom.ui.theme.EcomTheme
@@ -49,7 +50,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun EcomApp(sharedViewModel: SharedViewModel) {
     val navController = rememberNavController()
-    val accountService = remember { AccountServiceImpl() }
+    val accountService = remember { AccountServiceImpl(fireStoreRepository = FireStoreRepository()) }
     NavigationHost(navController,accountService = accountService, sharedViewModel = sharedViewModel)
 }
 

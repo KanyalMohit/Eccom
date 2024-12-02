@@ -29,6 +29,7 @@ fun HomeTopAppBar(
     modifier: Modifier = Modifier,
     onCartClick: () -> Unit,
 ) {
+
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     TopAppBar(
         modifier = modifier,

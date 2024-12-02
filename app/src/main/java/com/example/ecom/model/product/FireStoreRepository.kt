@@ -1,5 +1,6 @@
 package com.example.ecom.model.product
 
+import android.util.Log
 import com.example.ecom.model.User
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
@@ -21,6 +22,16 @@ constructor() {
     }
 
     suspend fun updateUser(uid: String, updates: Map<String, Any>) {
-        usersCollection.document(uid).update(updates).await()
+        try {
+            usersCollection.document(uid).update(updates).await()
+            Log.d("update", "updateUser: Succesfull")
+        }catch (e : Exception){
+            Log.d("update", "updateUser: $e ")
+        }
+    }
+
+    suspend fun userExists(uid: String): Boolean {
+        val documentSnapshot = usersCollection.document(uid).get().await()
+        return documentSnapshot.exists()
     }
 }
