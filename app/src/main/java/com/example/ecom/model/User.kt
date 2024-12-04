@@ -8,7 +8,7 @@ data class User(
     val isAnonymous: Boolean = false,
     val contactNumber: String = "",
     val address: String = "",
-    val wishlist: List<String> = emptyList(),
+    val wishlist: List<Int> = emptyList(),
     val cart: Map<String, CartItem> = emptyMap()
 )
 data class CartItem(

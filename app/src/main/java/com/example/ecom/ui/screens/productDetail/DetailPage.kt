@@ -3,7 +3,6 @@ package com.example.ecom.ui.screens.productDetail
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -33,7 +32,11 @@ fun DetailPage(
             DetailTopAppBar(navController = navController)
         },
         bottomBar = {
-            DetailBottomAppBar()
+            DetailBottomAppBar(
+                onAddCart = {
+                    productDetailViewModel.addToCart(product?.stock,1)
+                }
+            )
         }
     ) { innerPadding ->
         Surface(

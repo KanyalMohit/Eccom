@@ -76,7 +76,8 @@ fun NavigationHost(
         }
         composable(Screen.Cart.route) {
             CartScreen(
-                navController = navController
+                navController = navController,
+                sharedViewModel = sharedViewModel
             )
         }
         composable(BottomNavItem.Wishlist.route) {

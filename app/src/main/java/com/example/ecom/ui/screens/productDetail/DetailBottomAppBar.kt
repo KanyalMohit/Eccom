@@ -25,7 +25,9 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailBottomAppBar() {
+fun DetailBottomAppBar(
+    onAddCart : ()-> Unit
+) {
     BottomAppBar(
         modifier = Modifier,
         tonalElevation = 12.dp,
@@ -40,7 +42,7 @@ fun DetailBottomAppBar() {
         ) {
             AssistChip(
                 modifier = Modifier.height(50.dp),
-                onClick = { /*TODO*/ },
+                onClick = { onAddCart() },
                 label = { Text("Add to Cart", fontSize = 18.sp) },
                 leadingIcon = {
                     Icon(

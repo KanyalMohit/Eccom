@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
+import com.example.ecom.Navigation.BottomNavItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,7 +37,9 @@ fun DetailTopAppBar(navController: NavController) {
             }
         },
         actions = {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = {
+                navController.navigate(BottomNavItem.Cart.route)
+            }) {
                 Icon(imageVector = Icons.Filled.ShoppingCart, contentDescription = "Cart")
             }
         },
